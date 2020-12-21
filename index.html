@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app1">
+    <p>Hello {{ name.toUpperCase() }}!</p>
+    <p><input type="text" v-model="name"></p>
+  </div>
+
+  <div id="app2" class="container">
+    <h1>Todo List</h1>
+    <button @click="purge">Purge</button>
+    <!-- todo.isDoneがfalseの数をリアルタイムに計算しています。 -->
+    <span class="info">({{remaining.length}} / {{todos.length}})</span>
+    <ul v-if="todos.length">
+      <!-- 配列のループ処理です。 -->
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <!-- 
+          :classは、v-bindと同じ意味です。
+          todo.isDoneがtrueの場合のみ、spanタグに doneクラスを付けます。
+         -->
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <!-- <span v-bind:class="{done: todo.isDone}">{{ todo.title }}</span> -->
+        <span @click="deleteItem(index)" class="command">[x]</span>
+        <!-- v-show はtodosの長さがない場合に表示されます。 -->
+        <li v-show="!todos.length">Nothing. これはv-showで表示しています。</li>
+      </li>
+    </ul>
+    <ul v-else>
+      <li>Nothing. これはv-ifの分岐で表示しています。</li>
+    </ul>
+    <!-- v-onはイベントが発生した時に呼び出すメソッドを定義します。 -->
+    <!-- .preventは、formをsubmitした時にデフォルトの動作はページ遷移ですが、それを防いでくれます。（同一画面で処理してくれる設定です。） -->
+    <form v-on:submit.prevent="addItem">
+    <!-- v-onは@で省略することも可能です。  -->
+    <!-- <form @submit="addItem"> -->
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <div id="app3">
+    <like-component></like-component>
+    <like-component></like-component>
+    <like-component></like-component>
+  </div>
+
+  <div id="app4">
+    <like-component2 message="Like"></like-component2>
+    <like-component2 message="Awesome"></like-component2>
+    <like-component2 message="Great"></like-component2>
+    <like-component2></like-component2>
+  </div>
+
+  <div id="app5">
+    <p>Total Likes: {{ total }}</p>
+    <!-- v-on:と@ は同じ役割です。 -->
+    <like-component3 message="Like" v-on:increment="incrementTotal"></like-component3>
+    <like-component3 message="Awesome" @increment="incrementTotal"></like-component3>
+    <like-component3 message="Great" @increment="incrementTotal"></like-component3>
+    <like-component3 @increment="incrementTotal"></like-component3>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
