@@ -7,8 +7,20 @@
 </head>
 <body>
 
-  <div id="app">
+  <div id="app1">
     <p>{{ message }}</p>
+  </div>
+
+  <div id="app2">
+    <p>{{ sayHi() }}</p>
+    <!-- 上記をディレクティブで書くと以下の様になります。 -->
+    <p v-text="sayHi()"></p>
+  </div>
+
+  <div id="app3">
+    <!-- v-htmlを使います。 -->
+    <p v-html="html1"></p>
+    <p v-html="html2"></p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
