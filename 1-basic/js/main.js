@@ -27,12 +27,28 @@ let app2 = new Vue({
 });
 
 /* 
-  v-thmlを利用する用です。
+  v-thmlを利用します。
  */
 let app3 = new Vue({
   el: '#app3',
   data: {
     html1: '<h1>hello vue! from app3<h2>',
     html2: '<h2>hello vue! from app3<h2>'
+  }
+});
+
+/* 
+  v-bindを利用します。
+ */
+let app4 = new Vue({
+  el: '#app4',
+  data: {
+    url: 'https://www.google.com/',
+    number: 31,
+    /* オブジェクトで属性を渡す場合は、keyは必ず属性名にする必要があります。 */
+    urlObject: {
+      href: 'https://www.google.com/',
+      id: 32,
+    }
   }
 });

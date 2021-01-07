@@ -23,6 +23,20 @@
     <p v-html="html2"></p>
   </div>
 
+  <div id="app4">
+    <!-- v-bindを使います。 -->
+    <a v-bind:href="url">link</a>
+    <br>
+    <!-- v-bindは省略可能です。 -->
+    <a :href="url">link</a>
+    <br>
+    <!-- 値が複数ある場合はオブジェクトのように渡すこともできます。 -->
+    <a v-bind="{href: url, id: number}">link</a>
+    <br>
+    <!-- オブジェクト内で属性を定義することもできます。 -->
+    <a v-bind="urlObject">link</a>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="js/main.js"></script>
 </body>
