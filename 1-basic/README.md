@@ -44,35 +44,245 @@ let app2 = new Vue({
 
 ### v-thml
 ```javascript
+/* 
+  v-thmlを利用します。
+ */
+let app3 = new Vue({
+  el: '#app3',
+  data: {
+    html1: '<h1>hello vue! from app3<h2>',
+    html2: '<h2>hello vue! from app3<h2>'
+  }
 });
 ```
 ```html
+  <div id="app3">
+    <!-- v-htmlを使います。 -->
+    <p v-html="html1"></p>
+    <p v-html="html2"></p>
+  </div>
 ```
 <br>
 
 ### v-bind 属性へ挿入、１つのみ
 ```javascript
-});
+/* 
+  v-bindを利用します。
+ */
+let app4 = new Vue({
+  el: '#app4',
+  data: {
+    url: 'https://www.google.com/',
+  }
+})
 ```
 ```html
+  <div id="app4">
+    <!-- v-bindを使います。 -->
+    <a v-bind:href="url">link</a>
+    <br>
+    <!-- v-bindは省略可能です。 -->
+    <a :href="url">link</a>
+    <br>
+  </div>
 ```
 <br>
 
 ### v-bind 属性へ挿入、まとめて
 ```javascript
-});
+/* 
+  v-bindを利用します。
+ */
+let app4 = new Vue({
+  el: '#app4',
+  data: {
+    url: 'https://www.google.com/',
+    number: 31,
+  }
+})
 ```
 ```html
+  <div id="app4">
+    <!-- 値が複数ある場合はオブジェクトのように渡すこともできます。 -->
+    <a v-bind="{href: url, id: number}">link</a>
+  </div>
 ```
 <br>
 
 ### v-bind 属性へ挿入、オブジェクトでまとめて
 ```javascript
+/* 
+  v-bindを利用します。
+ */
+let app4 = new Vue({
+  el: '#app4',
+  data: {
+    /* オブジェクトで属性を渡す場合は、keyは必ず属性名にする必要があります。 */
+    urlObject: {
+      href: 'https://www.google.com/',
+      id: 32,
+    }
+  }
+})
+```
+```html
+  <div id="app4">
+    <!-- オブジェクト内で属性を定義することもできます。 -->
+    <a v-bind="urlObject">link</a>
+  </div>
+```
+<br>
+
+### v-on:click
+```v-on```で指定出来るイベントは以下参照  
+https://developer.mozilla.org/ja/docs/Web/Events
+
+```javascript
+let app5 = new Vue({
+  el: '#app5',
+  data: {
+    number: 0,
+  }
 });
+```
+```html
+  <div id="app5">
+    <!-- v-on:clickを使います。 -->
+    <p>現在 {{ number }} 回クリックされています。</p>
+    <button v-on:click="number += 1">カウントアップ</button>
+  </div>
+```
+<br>
+
+### v-on:click 関数利用
+```v-on```で指定出来るイベントは以下参照  
+https://developer.mozilla.org/ja/docs/Web/Events
+
+```javascript
+/* 
+  v-on:clickを利用します。
+ */
+let app5 = new Vue({
+  el: '#app5',
+  data: {
+    number: 0,
+  },
+  methods: {
+    countup: function() {
+      this.number += 1;
+    }
+  }
+})
+```
+```html
+  <div id="app5">
+    <!-- v-on:clickを使います。 -->
+    <p>現在 {{ number }} 回クリックされています。</p>
+    <button v-on:click="countup()">カウントアップ</button>
+  </div>
+```
+<br>
+
+### イベントを取得する
+HTML側で```changeMousePosition()```のように```()```を付けると正常に動かなくなるので注意。  
+```javascript
+/* 
+  v-on:mounsemoveを使ってイベント情報を取得します。
+ */
+let app6 = new Vue({
+  el: '#app6',
+  data: {
+    x: 0,
+    y: 0,
+  },
+  methods: {
+    changeMousePosition: function(event) {
+      console.log(event);
+      this.x = event.clientX;
+      this.y = event.clientY;
+    }
+  }
+});
+```
+```html
+  <div id="app6">
+    <!-- v-on:mounsemoveを使ってイベント情報を取得します。 -->
+    <p v-on:mousemove="changeMousePosition">マウスをのせてください。マウスの座標を表示します。</p>
+    <p>X: {{ x }}, Y:{{ y }}</p>
+  </div>
+```
+<br>
+
+
+### 
+```javascript
 ```
 ```html
 ```
 <br>
 
 
+### 
+```javascript
+```
+```html
+```
+<br>
 
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>
+
+### 
+```javascript
+```
+```html
+```
+<br>

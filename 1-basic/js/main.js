@@ -52,3 +52,36 @@ let app4 = new Vue({
     }
   }
 });
+
+/* 
+  v-on:clickを利用します。
+ */
+let app5 = new Vue({
+  el: '#app5',
+  data: {
+    number: 0,
+  },
+  methods: {
+    countup: function() {
+      this.number += 1;
+    }
+  }
+});
+
+/* 
+  v-on:mounsemoveを使ってイベント情報を取得します。
+ */
+let app6 = new Vue({
+  el: '#app6',
+  data: {
+    x: 0,
+    y: 0,
+  },
+  methods: {
+    changeMousePosition: function(event) {
+      console.log(event);
+      this.x = event.clientX;
+      this.y = event.clientY;
+    }
+  }
+});

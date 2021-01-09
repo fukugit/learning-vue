@@ -10,18 +10,21 @@
   <div id="app1">
     <p>{{ message }}</p>
   </div>
+  <hr>
 
   <div id="app2">
     <p>{{ sayHi() }}</p>
     <!-- 上記をディレクティブで書くと以下の様になります。 -->
     <p v-text="sayHi()"></p>
   </div>
+  <hr>
 
   <div id="app3">
     <!-- v-htmlを使います。 -->
     <p v-html="html1"></p>
     <p v-html="html2"></p>
   </div>
+  <hr>
 
   <div id="app4">
     <!-- v-bindを使います。 -->
@@ -36,6 +39,21 @@
     <!-- オブジェクト内で属性を定義することもできます。 -->
     <a v-bind="urlObject">link</a>
   </div>
+  <hr>
+
+  <div id="app5">
+    <!-- v-on:clickを使います。 -->
+    <p>現在 {{ number }} 回クリックされています。</p>
+    <button v-on:click="countup()">カウントアップ</button>
+  </div>
+  <hr>
+
+  <div id="app6">
+    <!-- v-on:mounsemoveを使ってイベント情報を取得します。 -->
+    <p v-on:mousemove="changeMousePosition">マウスをのせてください。マウスの座標を表示します。</p>
+    <p>X: {{ x }}, Y:{{ y }}</p>
+  </div>
+  <hr>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="js/main.js"></script>
