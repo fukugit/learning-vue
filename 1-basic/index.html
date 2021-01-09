@@ -6,13 +6,17 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Vue.jsのバインディングの基本</h1>
+  <hr>
 
   <div id="app1">
+    <h2>文字を表示</h2>
     <p>{{ message }}</p>
   </div>
   <hr>
 
   <div id="app2">
+    <h2>関数を呼び出し</h2>
     <p>{{ sayHi() }}</p>
     <!-- 上記をディレクティブで書くと以下の様になります。 -->
     <p v-text="sayHi()"></p>
@@ -20,13 +24,14 @@
   <hr>
 
   <div id="app3">
-    <!-- v-htmlを使います。 -->
+    <h2>v-html</h2>
     <p v-html="html1"></p>
     <p v-html="html2"></p>
   </div>
   <hr>
 
   <div id="app4">
+    <h2>v-bind</h2>
     <!-- v-bindを使います。 -->
     <a v-bind:href="url">link</a>
     <br>
@@ -42,6 +47,7 @@
   <hr>
 
   <div id="app5">
+    <h2>v-on:click</h2>
     <!-- v-on:clickを使います。 -->
     <p>現在 {{ number }} 回クリックされています。</p>
     <button v-on:click="countup()">カウントアップ</button>
@@ -49,8 +55,20 @@
   <hr>
 
   <div id="app6">
+    <h2>イベント情報取得</h2>
     <!-- v-on:mounsemoveを使ってイベント情報を取得します。 -->
     <p v-on:mousemove="changeMousePosition">マウスをのせてください。マウスの座標を表示します。</p>
+    <p>X: {{ x }}, Y:{{ y }}</p>
+  </div>
+  <hr>
+
+  <div id="app7">
+    <h2>メソッドに引数を渡す</h2>
+    <p>現在 {{ number }} 回クリックされています。</p>
+    <button v-on:click="countup(3)">カウントアップ</button>
+    <br/>
+    <!-- イベント情報は$eventで引数に渡します。 -->
+    <p v-on:mousemove="changeMousePosition(3, $event)">マウスをのせてください。マウスの座標を表示します。</p>
     <p>X: {{ x }}, Y:{{ y }}</p>
   </div>
   <hr>

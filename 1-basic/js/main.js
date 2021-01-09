@@ -32,8 +32,8 @@ let app2 = new Vue({
 let app3 = new Vue({
   el: '#app3',
   data: {
-    html1: '<h1>hello vue! from app3<h2>',
-    html2: '<h2>hello vue! from app3<h2>'
+    html1: '<p style="color: red;">hello vue! from app3</p>',
+    html2: '<p style="color: blue;">hello vue! from app3</p>'
   }
 });
 
@@ -82,6 +82,28 @@ let app6 = new Vue({
       console.log(event);
       this.x = event.clientX;
       this.y = event.clientY;
+    }
+  }
+});
+
+/* 
+  v-on:mounsemoveを使ってイベント情報を取得します。
+ */
+let app7 = new Vue({
+  el: '#app7',
+  data: {
+    number: 0,
+    x: 0,
+    y: 0,
+  },
+  methods: {
+    countup: function(time) {
+      this.number += 1 * time;
+    },
+    changeMousePosition: function(dividedNumber, event) {
+      console.log(event);
+      this.x = event.clientX / dividedNumber;
+      this.y = event.clientY / dividedNumber;
     }
   }
 });
