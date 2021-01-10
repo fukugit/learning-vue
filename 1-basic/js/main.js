@@ -87,7 +87,7 @@ let app6 = new Vue({
 });
 
 /* 
-  v-on:mounsemoveを使ってイベント情報を取得します。
+  メソッドの引数を取得します。
  */
 let app7 = new Vue({
   el: '#app7',

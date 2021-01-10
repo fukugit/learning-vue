@@ -2,6 +2,10 @@
 Vue.jsの基本構文をまとめました。  
 <br>
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+<br>
+
 ## バインディングの基本
 ### { }で文字列を表示する
 ```javascript
@@ -214,10 +218,40 @@ let app6 = new Vue({
 <br>
 
 
-### 
+### HTMLからメソッドに引数を渡す
 ```javascript
+/* 
+  メソッドの引数を取得します。
+ */
+let app7 = new Vue({
+  el: '#app7',
+  data: {
+    number: 0,
+    x: 0,
+    y: 0,
+  },
+  methods: {
+    countup: function(time) {
+      this.number += 1 * time;
+    },
+    changeMousePosition: function(dividedNumber, event) {
+      console.log(event);
+      this.x = event.clientX / dividedNumber;
+      this.y = event.clientY / dividedNumber;
+    }
+  }
+});
 ```
 ```html
+  <div id="app7">
+    <h2>メソッドに引数を渡す</h2>
+    <p>現在 {{ number }} 回クリックされています。</p>
+    <button v-on:click="countup(3)">カウントアップ</button>
+    <br/>
+    <!-- イベント情報は$eventで引数に渡します。 -->
+    <p v-on:mousemove="changeMousePosition(3, $event)">マウスをのせてください。マウスの座標を表示します。</p>
+    <p>X: {{ x }}, Y:{{ y }}</p>
+  </div>
 ```
 <br>
 
