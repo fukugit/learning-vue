@@ -101,9 +101,25 @@ let app7 = new Vue({
       this.number += 1 * time;
     },
     changeMousePosition: function(dividedNumber, event) {
-      console.log(event);
       this.x = event.clientX / dividedNumber;
       this.y = event.clientY / dividedNumber;
+    }
+  }
+});
+
+/* 
+  .stopと.preventでイベントの動作を停止させます。
+ */
+let app8 = new Vue({
+  el: '#app8',
+  data: {
+    x1: 0,
+    y1: 0,
+  },
+  methods: {
+    changeMousePosition: function(event) {
+      this.x1 = event.clientX;
+      this.y1 = event.clientY;
     }
   }
 });

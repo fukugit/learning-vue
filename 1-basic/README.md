@@ -24,7 +24,7 @@ let app1 = new Vue({
 ```
 <br>
 
-### 関数を呼び出します
+### 関数を呼び出す
 ```javascript
 let app2 = new Vue({
   el: '#app2',
@@ -69,7 +69,7 @@ let app3 = new Vue({
 ```
 <br>
 
-### v-bind 属性へ挿入、１つのみ
+### v-bind 属性へ挿入、値１つのみ
 ```javascript
 /* 
   v-bindを利用します。
@@ -93,7 +93,7 @@ let app4 = new Vue({
 ```
 <br>
 
-### v-bind 属性へ挿入、まとめて
+### v-bind 属性へ挿入、値複数
 ```javascript
 /* 
   v-bindを利用します。
@@ -114,7 +114,7 @@ let app4 = new Vue({
 ```
 <br>
 
-### v-bind 属性へ挿入、オブジェクトでまとめて
+### v-bind 属性へ挿入、オブジェクトで一括
 ```javascript
 /* 
   v-bindを利用します。
@@ -138,7 +138,7 @@ let app4 = new Vue({
 ```
 <br>
 
-### v-on:click
+### v-on:click、値反映
 ```v-on```で指定出来るイベントは以下参照  
 https://developer.mozilla.org/ja/docs/Web/Events
 
@@ -257,10 +257,34 @@ let app7 = new Vue({
 <br>
 
 
-### 
+### .stopと.preventでイベントの動作を停止させる
 ```javascript
+/* 
+  .stopと.preventでイベントの動作を停止させます。
+ */
+let app8 = new Vue({
+  el: '#app8',
+  data: {
+    x1: 0,
+    y1: 0,
+  },
+  methods: {
+    changeMousePosition: function(event) {
+      this.x1 = event.clientX;
+      this.y1 = event.clientY;
+    }
+  }
+});
 ```
 ```html
+  <div id="app8">
+    <h2>.stopと.preventで動作を停止する。</h2>
+    <p v-on:mousemove="changeMousePosition($event)">マウスをのせてください。マウスの座標を表示します。
+      <span v-on:mousemove.stop>ここの位置では反応しません。.stopが効いています。</span>
+    </p>
+    <p>X: {{ x1 }}, Y:{{ y1 }}</p>
+    <a v-on:click.prevent href="https://www.google.com/">.preventでリンクのデフォルトの挙動は動かないになっています。</a>
+  </div>
 ```
 <br>
 
