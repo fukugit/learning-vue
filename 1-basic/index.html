@@ -50,7 +50,11 @@
     <h2>v-on:click</h2>
     <!-- v-on:clickを使います。 -->
     <p>現在 {{ number }} 回クリックされています。</p>
-    <button v-on:click="countup()">カウントアップ</button>
+    <button v-on:click="countup()">v-on:clickでカウントアップ</button>
+    <br>
+    <button @click="countup()">@clickでカウントアップ</button>
+    <br>
+    <button v-on:[event]="countup()">v-on:[event]でカウントアップ</button>
   </div>
   <hr>
 
@@ -80,6 +84,20 @@
     </p>
     <p>X: {{ x1 }}, Y:{{ y1 }}</p>
     <a v-on:click.prevent href="https://www.google.com/">.preventでリンクのデフォルトの挙動は動かないになっています。</a>
+  </div>
+  <hr>
+
+  <div id="app9">
+    <h2>キーボードに対するイベントを発生させる</h2>
+    <p>文字を入力してエンターキーを押して下さい。</p>
+    <input type="text" v-on:keyup.enter="alert">
+  </div>
+  <hr>
+
+  <div id="app10">
+    <h2>双方向バインディング v-model</h2>
+    <input type="text" v-model="message">
+    <p>{{ message }}</p>
   </div>
   <hr>
 

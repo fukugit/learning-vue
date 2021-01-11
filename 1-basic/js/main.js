@@ -60,6 +60,7 @@ let app5 = new Vue({
   el: '#app5',
   data: {
     number: 0,
+    event: 'click',
   },
   methods: {
     countup: function() {
@@ -121,5 +122,27 @@ let app8 = new Vue({
       this.x1 = event.clientX;
       this.y1 = event.clientY;
     }
+  }
+});
+
+/* 
+  キーボードに対するイベントを発生させる
+ */
+let app9 = new Vue({
+  el: '#app9',
+  methods: {
+    alert: function() {
+      alert('入力完了!');
+    }
+  }
+});
+
+/* 
+   双方向バインディング v-model
+ */
+let app10 = new Vue({
+  el: '#app10',
+  data: {
+    message: 'こんにちわ',
   }
 });

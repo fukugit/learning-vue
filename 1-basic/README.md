@@ -166,19 +166,31 @@ let app4 = new Vue({
 ```v-on```で指定出来るイベントは以下参照  
 https://developer.mozilla.org/ja/docs/Web/Events
 
+clickイベントの発火方法は3種類あるので注意。  
 ```javascript
 let app5 = new Vue({
   el: '#app5',
   data: {
     number: 0,
+    event: 'click',
+  },
+  methods: {
+    countup: function() {
+      this.number += 1;
+    }
   }
 });
 ```
 ```html
   <div id="app5">
+    <h2>v-on:click</h2>
     <!-- v-on:clickを使います。 -->
     <p>現在 {{ number }} 回クリックされています。</p>
-    <button v-on:click="number += 1">カウントアップ</button>
+    <button v-on:click="countup()">v-on:clickでカウントアップ</button>
+    <br>
+    <button @click="countup()">@clickでカウントアップ</button>
+    <br>
+    <button v-on:[event]="countup()">v-on:[event]でカウントアップ</button>
   </div>
 ```
 <br>
@@ -313,18 +325,45 @@ let app8 = new Vue({
 <br>
 
 
-### 
+### キーボードに対するイベントを発生させる
 ```javascript
+/* 
+  キーボードに対するイベントを発生させる
+ */
+let app9 = new Vue({
+  el: '#app9',
+  methods: {
+    alert: function() {
+      alert('入力完了!');
+    }
+  }
+});
 ```
 ```html
+  <div id="app9">
+    <h2>キーボードに対するイベントを発生させる</h2>
+    <p>文字を入力してエンターキーを押して下さい。</p>
+    <input type="text" v-on:keyup.enter="alert">
+  </div>
 ```
 <br>
 
 
-### 
+### 双方向バインディング v-model
 ```javascript
+let app10 = new Vue({
+  el: '#app10',
+  data: {
+    message: 'こんにちわ',
+  }
+});
 ```
 ```html
+  <div id="app10">
+    <h2>双方向バインディング v-model</h2>
+    <input type="text" v-model="message">
+    <p>{{ message }}</p>
+  </div>
 ```
 <br>
 
