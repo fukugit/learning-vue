@@ -367,10 +367,40 @@ let app10 = new Vue({
 ```
 <br>
 
-### 
+### computedプロパティ
 ```javascript
+let app11 = new Vue({
+  el: '#app11',
+  data: {
+    counter: 0,
+  },
+  /* 
+    画面が再描画された時に毎回実行される 
+    極力使わない方がよい
+   */
+  methods: {
+    lessThanThreeMethod: function() {
+      return this.counter > 3 ? '3より上' : '3より下'
+    }
+  },
+  /* 
+   computedは、参照しているプロパティ値が変更された時のみを演算する。
+  */
+  computed: {
+    lessThanThreeComputed: function() {
+      return this.counter > 3 ? '3より上' : '3より下'
+    }
+  }
+});
 ```
 ```html
+  <div id="app11">
+    <h2>computedプロパティ</h2>
+    <p>{{ counter }}</p>
+    <button @click="counter += 1">+1</button>
+    <p>{{ lessThanThreeComputed }}</p>
+    <p>{{ lessThanThreeMethod() }}</p>
+  </div>
 ```
 <br>
 
