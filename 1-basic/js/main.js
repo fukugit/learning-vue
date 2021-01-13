@@ -222,3 +222,16 @@ let app13 = new Vue({
     }
   },
 });
+
+/* 
+  CSS Classの付け方 その2
+ */
+let app14 = new Vue({
+  el: '#app14',
+  data: {
+    isActive: true,
+    // 値にCSSのClass名を指定します。
+    title: 'red-color',
+    bg: 'blue'
+  },
+});

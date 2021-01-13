@@ -8,6 +8,9 @@
     .red {
       background-color: red;
     }
+    .red-color {
+      color: red;
+    }
     .blue {
       background-color: blue;
     }
@@ -132,6 +135,16 @@
     <button @click="isActive = !isActive">Class切り替え</button>
   </div>
   <hr>
+
+  <div id="app14">
+    <h2>CSS Classの付け方 その2</h2>
+    <p :class="[title, bg]">Hello</p>
+    <!-- Classを付ける条件を指定することもできます。 -->
+    <p :class="[{'red-color': isActive}, bg]">Hello</p>
+    <button @click="isActive = !isActive">Class切り替え</button>
+  </div>
+  <hr>
+
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="js/main.js"></script>

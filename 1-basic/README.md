@@ -460,6 +460,7 @@ let app13 = new Vue({
   computed: {
     classObject: function() {
       return {
+        // ここに class名と追加する条件を書きます。
         red: this.isActive,
         blue: !this.isActive
       }
@@ -476,10 +477,29 @@ let app13 = new Vue({
 ```
 <br>
 
-### 
+### CSS Classの付け方 その2
 ```javascript
+/* 
+  CSS Classの付け方 その2
+ */
+let app14 = new Vue({
+  el: '#app14',
+  data: {
+    isActive: true,
+    // 値にCSSのClass名を指定します。
+    title: 'red-color',
+    bg: 'blue'
+  },
+});
 ```
 ```html
+  <div id="app14">
+    <h2>CSS Classの付け方 その2</h2>
+    <p :class="[title, bg]">Hello</p>
+    <!-- Classを付ける条件を指定することもできます。 -->
+    <p :class="[{'red-color': isActive}, bg]">Hello</p>
+    <button @click="isActive = !isActive">Class切り替え</button>
+  </div
 ```
 <br>
 
