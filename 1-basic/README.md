@@ -23,9 +23,9 @@ Vue.jsの基本構文をまとめました。
   - [computedプロパティ](#computed%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)
   - [watchプロパティ](#watch%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)
   - [CSS Classの付け方 その1](#css-class%E3%81%AE%E4%BB%98%E3%81%91%E6%96%B9-%E3%81%9D%E3%81%AE1)
+  - [CSS Classの付け方 その2](#css-class%E3%81%AE%E4%BB%98%E3%81%91%E6%96%B9-%E3%81%9D%E3%81%AE2)
   - [](#)
   - [](#-1)
-  - [](#-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
