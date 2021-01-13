@@ -21,11 +21,11 @@ Vue.jsの基本構文をまとめました。
   - [キーボードに対するイベントを発生させる](#%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E7%99%BA%E7%94%9F%E3%81%95%E3%81%9B%E3%82%8B)
   - [双方向バインディング v-model](#%E5%8F%8C%E6%96%B9%E5%90%91%E3%83%90%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0-v-model)
   - [computedプロパティ](#computed%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)
+  - [watchプロパティ](#watch%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)
+  - [CSS Classの付け方 その1](#css-class%E3%81%AE%E4%BB%98%E3%81%91%E6%96%B9-%E3%81%9D%E3%81%AE1)
   - [](#)
   - [](#-1)
   - [](#-2)
-  - [](#-3)
-  - [](#-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
