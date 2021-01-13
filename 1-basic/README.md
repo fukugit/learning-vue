@@ -368,6 +368,8 @@ let app10 = new Vue({
 <br>
 
 ### computedプロパティ
+watchプロパティもあるけど、基本的にはcomputedを使います。  
+両者の違いは、watchは非同期処理。conputedは同期。  
 ```javascript
 let app11 = new Vue({
   el: '#app11',
@@ -398,23 +400,79 @@ let app11 = new Vue({
     <h2>computedプロパティ</h2>
     <p>{{ counter }}</p>
     <button @click="counter += 1">+1</button>
+    <!-- computedの場合は、() は絶対につけない -->
     <p>{{ lessThanThreeComputed }}</p>
+    <!-- methodの場合は、() はつける -->
     <p>{{ lessThanThreeMethod() }}</p>
   </div>
 ```
 <br>
 
-### 
+### watchプロパティ
 ```javascript
+let app12 = new Vue({
+  el: '#app12',
+  data: {
+    counter: 0,
+  },
+  /* 
+   computedは同期処理
+  */
+  computed: {
+    lessThanThreeComputed: function() {
+      return this.counter > 3 ? '3より上' : '3より下';
+    }
+  },
+  /* 
+   watchは同期処理
+  */
+  watch: {
+    counter: function() {
+      let vm = this;
+      // 3秒後に counterの値を0にします。
+      setTimeout(() => {
+        vm.counter = 0;
+      }, 3000);
+    }
+  }
+});
 ```
 ```html
+  <div id="app12">
+    <h2>watchプロパティ</h2>
+    <p>{{ counter }}</p>
+    <button @click="counter += 1">+1</button>
+    <p>{{ lessThanThreeComputed }}</p>
+  </div>
 ```
 <br>
 
-### 
+### CSS Classの付け方 その1
 ```javascript
+/* 
+  CSS Classの付け方 その1
+ */
+let app13 = new Vue({
+  el: '#app13',
+  data: {
+    isActive: true,
+  },
+  computed: {
+    classObject: function() {
+      return {
+        red: this.isActive,
+        blue: !this.isActive
+      }
+    }
+  },
+});
 ```
 ```html
+  <div id="app13">
+    <h2>CSS Classの付け方 その1</h2>
+    <p :class="classObject">Hello</p>
+    <button @click="isActive = !isActive">Class切り替え</button>
+  </div>
 ```
 <br>
 

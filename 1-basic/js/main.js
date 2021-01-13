@@ -173,3 +173,52 @@ let app11 = new Vue({
     }
   }
 });
+
+/* 
+  watchプロパティ
+ */
+let app12 = new Vue({
+  el: '#app12',
+  data: {
+    counter: 0,
+  },
+  /* 
+   computedは同期処理
+  */
+  computed: {
+    lessThanThreeComputed: function() {
+      return this.counter > 3 ? '3より上' : '3より下';
+    }
+  },
+  /* 
+   watchは同期処理
+  */
+  watch: {
+    counter: function() {
+      let vm = this;
+      // 3秒後に counterの値を0にします。
+      setTimeout(() => {
+        vm.counter = 0;
+      }, 3000);
+    }
+  }
+});
+
+
+/* 
+  CSS Classの付け方 その1
+ */
+let app13 = new Vue({
+  el: '#app13',
+  data: {
+    isActive: true,
+  },
+  computed: {
+    classObject: function() {
+      return {
+        red: this.isActive,
+        blue: !this.isActive
+      }
+    }
+  },
+});
