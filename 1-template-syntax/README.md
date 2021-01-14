@@ -6,7 +6,7 @@ Vue.jsの基本構文をまとめました。
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 目次
 
-- [バインディングの基本](#%E3%83%90%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%AE%E5%9F%BA%E6%9C%AC)
+- [学んだこと](#%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8)
   - [{ }で文字列を表示する](#-%E3%81%A7%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B)
   - [関数を呼び出す](#%E9%96%A2%E6%95%B0%E3%82%92%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%99)
   - [v-thml](#v-thml)
@@ -24,8 +24,6 @@ Vue.jsの基本構文をまとめました。
   - [watchプロパティ](#watch%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)
   - [CSS Classの付け方 その1](#css-class%E3%81%AE%E4%BB%98%E3%81%91%E6%96%B9-%E3%81%9D%E3%81%AE1)
   - [CSS Classの付け方 その2](#css-class%E3%81%AE%E4%BB%98%E3%81%91%E6%96%B9-%E3%81%9D%E3%81%AE2)
-  - [](#)
-  - [](#-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
