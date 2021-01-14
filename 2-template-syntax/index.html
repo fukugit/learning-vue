@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    .red {
+      background-color: red;
+    }
+    .red-color {
+      color: red;
+    }
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vue.jsのテンプレート構文の基礎 その2</h1>
+  <hr>
+
+  <div id="app1">
+    <h2>v-if で条件付きレンダリングする</h2>
+    <p v-if="ok">OK!</p>
+    <p v-if="ng">NG...</p>
+  </div>
+  <hr>
+
+  <div id="app2">
+    <h2>v-if v-else</h2>
+    <p v-if="ok">OK!</p>
+    <!-- v-elseは v-ifの直下に入れる必要があります。 -->
+    <p v-else>NG...</p>
+  </div>
+  <hr>
+
+  <div id="app3">
+    <h2>v-else-if</h2>
+    <p v-if="ok">OK!</p>
+    <p v-else-if="sankaku">△</p>
+    <p v-else>NG...</p>
+  </div>
+  <hr>
+
+  <div id="app4">
+    <h2>templateタグ</h2>
+    <button @click="ok = !ok">ボタン</button>
+    <!-- templateタグはHTML上には一切表示されないのでv-ifと相性がよいです。 -->
+    <template v-if="ok">
+      <p>hello</p>
+    </template>
+  </div>
+  <hr>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

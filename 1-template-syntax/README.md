@@ -1,4 +1,4 @@
-# Vue.jsの基本構文
+# テンプレート構文の基礎
 Vue.jsの基本構文をまとめました。  
 <br>
 
@@ -31,7 +31,7 @@ Vue.jsの基本構文をまとめました。
 <br>
 
 
-## バインディングの基本
+## 学んだこと
 ### { }で文字列を表示する
 ```javascript
 let app1 = new Vue({
@@ -500,19 +500,5 @@ let app14 = new Vue({
     <p :class="[{'red-color': isActive}, bg]">Hello</p>
     <button @click="isActive = !isActive">Class切り替え</button>
   </div
-```
-<br>
-
-### 
-```javascript
-```
-```html
-```
-<br>
-
-### 
-```javascript
-```
-```html
 ```
 <br>
