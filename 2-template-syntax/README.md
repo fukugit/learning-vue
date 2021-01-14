@@ -10,11 +10,11 @@ Vue.jsの基本構文をまとめました。
   - [v-if](#v-if)
   - [v-if v-else](#v-if-v-else)
   - [v-else-if](#v-else-if)
+  - [v-show](#v-show)
   - [](#)
   - [](#-1)
   - [](#-2)
   - [](#-3)
-  - [](#-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
