@@ -48,7 +48,6 @@ let app2 = new Vue({
     ok: false,
   }
 });
-})
 ```
 ```html
   <div id="app2">
@@ -69,7 +68,6 @@ let app3 = new Vue({
     sankaku: true,
   }
 })
-})
 ```
 ```html
   <div id="app3">
@@ -81,9 +79,31 @@ let app3 = new Vue({
 ```
 <br>
 
+### v-show
+```javascript
+let app5 = new Vue({
+  el: '#app5',
+  data: {
+    ok: true,
+  }
+});
+```
+```html
+  <div id="app5">
+    <h2>v-show</h2>
+    <!-- 
+      v-show は v-ifと違って「display: none;」をHTML要素に付けるだけ。
+      v-ifの方が使い勝手がよさそうに見えるが、v-showの方が高速。
+      よって、ボタンの切り替えで表示/非表示をするのであれば、v-showを使うこと
+     -->
+    <button @click="ok = !ok">ボタン</button>
+    <p v-show="ok">hello</p>
+  </div>
+```
+<br>
+
 ### 
 ```javascript
-})
 ```
 ```html
 ```
@@ -91,7 +111,6 @@ let app3 = new Vue({
 
 ### 
 ```javascript
-})
 ```
 ```html
 ```
@@ -99,7 +118,6 @@ let app3 = new Vue({
 
 ### 
 ```javascript
-})
 ```
 ```html
 ```
@@ -107,15 +125,6 @@ let app3 = new Vue({
 
 ### 
 ```javascript
-})
-```
-```html
-```
-<br>
-
-### 
-```javascript
-})
 ```
 ```html
 ```

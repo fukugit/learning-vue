@@ -53,6 +53,18 @@
   </div>
   <hr>
 
+  <div id="app5">
+    <h2>v-show</h2>
+    <!-- 
+      v-show は v-ifと違って「display: none;」をHTML要素に付けるだけ。
+      v-ifの方が使い勝手がよさそうに見えるが、v-showの方が高速。
+      よって、ボタンの切り替えで表示/非表示をするのであれば、v-showを使うこと
+     -->
+    <button @click="ok = !ok">ボタン</button>
+    <p v-show="ok">hello</p>
+  </div>
+  <hr>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="js/main.js"></script>
 </body>

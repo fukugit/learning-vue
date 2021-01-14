@@ -40,4 +40,15 @@ let app4 = new Vue({
   data: {
     ok: true,
   }
-})
+});
+
+/* 
+  v-show
+ */
+let app5 = new Vue({
+  el: '#app5',
+  data: {
+    ok: true,
+  }
+});
+
