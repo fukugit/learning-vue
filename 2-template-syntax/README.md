@@ -102,17 +102,41 @@ let app5 = new Vue({
 ```
 <br>
 
-### 
+### v-for
 ```javascript
+let app6 = new Vue({
+  el: '#app6',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});
 ```
 ```html
+  <div id="app6">
+    <h2>v-for</h2>
+    <ul>
+      <li v-for="value in fruits">{{value}}</li>
+    </ul>
+  </div>
 ```
 <br>
 
-### 
+### v-for 要素数を取得する
 ```javascript
+let app7 = new Vue({
+  el: '#app7',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});
 ```
 ```html
+  <div id="app7">
+    <h2>v-for 要素数を取得する</h2>
+    <ul>
+      <li v-for="(value, index) in fruits">{{value}} 要素数は{{index}}</li>
+    </ul>
+  </div>
 ```
 <br>
 

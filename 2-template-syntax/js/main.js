@@ -52,3 +52,22 @@ let app5 = new Vue({
   }
 });
 
+/* 
+  v-for
+ */
+let app6 = new Vue({
+  el: '#app6',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});
+
+/* 
+  v-for 要素数を取得する
+ */
+let app7 = new Vue({
+  el: '#app7',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});

@@ -65,6 +65,22 @@
   </div>
   <hr>
 
+  <div id="app6">
+    <h2>v-for</h2>
+    <ul>
+      <li v-for="value in fruits">{{value}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div id="app7">
+    <h2>v-for 要素数を取得する</h2>
+    <ul>
+      <li v-for="(value, index) in fruits">{{value}} 要素数は{{index}}</li>
+    </ul>
+  </div>
+  <hr>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="js/main.js"></script>
 </body>
