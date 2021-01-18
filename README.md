@@ -27,7 +27,7 @@ Vue.jsの学習用プロジェクトです。
 |                                        | watch    |
 |                                        | CSS Class    |
 | [テンプレート構文の基礎について その2](./2-template-syntax) |   v-if   |
-|                                        |     |
-|                                        |     |
+|                                        | v-for    |
+|                                        | :key    |
 
 <br>

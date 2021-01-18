@@ -71,3 +71,52 @@ let app7 = new Vue({
     fruits: ['バナナ', 'りんご', 'ぶどう'],
   }
 });
+
+/* 
+  v-for オブジェクトを操作する
+ */
+let app8 = new Vue({
+  el: '#app8',
+  data: {
+    object: {
+      fistName: '弥',
+      lastName: '水谷',
+      age: 33,
+    },
+  }
+});
+
+/* 
+  v-for templateタグを使う
+ */
+let app9 = new Vue({
+  el: '#app9',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});
+
+/* 
+  v-for 整数値でループさせる
+ */
+let app10 = new Vue({
+  el: '#app10',
+});
+
+/* 
+  v-for key属性をつけて要素をまとめる
+ */
+let app11 = new Vue({
+  el: '#app11',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  },
+  methods: {
+    remove: function() {
+      this.fruits.shift();
+    },
+    reset: function() {
+      this.fruits = ['バナナ', 'りんご', 'ぶどう'];
+    }
+  }
+});

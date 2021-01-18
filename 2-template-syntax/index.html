@@ -66,7 +66,7 @@
   <hr>
 
   <div id="app6">
-    <h2>v-for</h2>
+    <h2>v-for 配列操作する</h2>
     <ul>
       <li v-for="value in fruits">{{value}}</li>
     </ul>
@@ -78,6 +78,53 @@
     <ul>
       <li v-for="(value, index) in fruits">{{value}} 要素数は{{index}}</li>
     </ul>
+  </div>
+  <hr>
+
+  <div id="app8">
+    <h2>v-for オブジェクトを操作する</h2>
+    <ul>
+      <li v-for="(value, key) in object">{{key}} : {{value}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div id="app9">
+    <h2>v-for templateタグを使う</h2>
+    <ul>
+      <!-- templateタグを使うことで、li内で別のタグを使うことが出来ます。-->
+      <template v-for="(value, index) in fruits">
+        <li>{{index}} : {{value}}</li>
+        <hr>
+      </template>
+    </ul>
+  </div>
+  <hr>
+
+  <div id="app10">
+    <h2>v-for 整数値でループさせる</h2>
+    <ul>
+      <!-- 10回ループさせます。 -->
+      <li v-for="n in 3">{{n}}</li>
+      <!-- inはofに置き換えることができます。-->
+      <li v-for="n of 3">{{n}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div id="app11">
+    <h2>key属性をつけて要素をまとめる</h2>
+    <ul>
+      <!-- v-forを使うときは必ず key属性をつけること -->
+      <!-- keyはtemplateでは使えません -->
+      <!-- keyにindexは絶対につかないこと。バグの元 -->
+      <div v-for="fruit in fruits" :key="fruit">
+        <p>{{fruit}}</p>
+        <input type="text">
+      </div>
+    </ul>
+    <button @click="remove">先頭を削除</button>
+    <button @click="reset">リセット</button>
   </div>
   <hr>
 

@@ -102,7 +102,7 @@ let app5 = new Vue({
 ```
 <br>
 
-### v-for
+### v-for 配列を操作する
 ```javascript
 let app6 = new Vue({
   el: '#app6',
@@ -140,16 +140,102 @@ let app7 = new Vue({
 ```
 <br>
 
-### 
+### v-for オブジェクトを操作する
 ```javascript
+let app8 = new Vue({
+  el: '#app8',
+  data: {
+    object: {
+      fistName: '弥',
+      lastName: '水谷',
+      age: 33,
+    },
+  }
+});
 ```
 ```html
+  <div id="app8">
+    <h2>v-for オブジェクトを操作する</h2>
+    <ul>
+      <li v-for="(value, key) in object">{{key}} : {{value}}</li>
+    </ul>
+  </div>
 ```
 <br>
 
-### 
+### v-for templateタグを使う
 ```javascript
+let app9 = new Vue({
+  el: '#app9',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  }
+});
 ```
 ```html
+  <div id="app9">
+    <h2>v-for templateタグを使う</h2>
+    <ul>
+      <!-- templateタグを使うことで、li内で別のタグを使うことが出来ます。-->
+      <template v-for="(value, index) in fruits">
+        <li>{{index}} : {{value}}</li>
+        <hr>
+      </template>
+    </ul>
+  </div>
+```
+<br>
+
+### v-for 整数値でループさせる
+```javascript
+let app10 = new Vue({
+  el: '#app10',
+});
+```
+```html
+  <div id="app10">
+    <h2>v-for 整数値でループさせる</h2>
+    <ul>
+      <!-- 10回ループさせます。 -->
+      <li v-for="n in 10">{{n}}</li>
+      <!-- inはofに置き換えることができます。-->
+      <li v-for="n of 10">{{n}}</li>
+    </ul>
+  </div>
+```
+<br>
+
+### key属性をつけて要素をまとめる
+```javascript
+let app11 = new Vue({
+  el: '#app11',
+  data: {
+    fruits: ['バナナ', 'りんご', 'ぶどう'],
+  },
+  methods: {
+    remove: function() {
+      this.fruits.shift();
+    },
+    reset: function() {
+      this.fruits = ['バナナ', 'りんご', 'ぶどう'];
+    }
+  }
+});
+```
+```html
+  <div id="app11">
+    <h2>key属性をつけて要素をまとめる</h2>
+    <ul>
+      <!-- v-forを使うときは必ず key属性をつけること -->
+      <!-- keyはtemplateでは使えません -->
+      <!-- keyにindexは絶対につかないこと。バグの元 -->
+      <div v-for="fruit in fruits" :key="fruit">
+        <p>{{fruit}}</p>
+        <input type="text">
+      </div>
+    </ul>
+    <button @click="remove">先頭を削除</button>
+    <button @click="reset">リセット</button>
+  </div>
 ```
 <br>
