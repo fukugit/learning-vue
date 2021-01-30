@@ -96,3 +96,155 @@ export default {
 </style>
 ```
 <br>
+
+### ES6でdataに関数を定義する
+```html
+<template>
+  <p>いいね({{ number }})</p>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      number: 1
+    }
+  }
+}
+</script>
+```
+<br>
+
+### Vueコンポーネントをグローバル登録する
+グローバル登録するコンポーネント
+```html
+<template>
+  <p>いいね({{ number }})</p>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      number: 5
+    }
+  }
+}
+</script>
+```
+<br>
+
+コンポーネントのグローバル登録  
+(main.js)[./main.js]で行います。
+```javascript
+import Vue from 'vue'
+import LikeNumber from './LikeNumber.vue'
+
+// ここでグローバル登録をします。
+Vue.component('LikeNumber', LikeNumber);
+```
+<br>
+
+コンポーネントの呼び出し
+```html
+<template>
+  <LikeNumber></LikeNumber>
+</template>
+```
+<br>
+
+コンポーネントのグローバル登録  
+(main.js)[./main.js]で行います。
+```javascript
+<template>
+  <div>
+    <LikeHeader></LikeHeader>
+  </div>
+</template>
+
+<script>
+import LikeHeader from "./LikeHeader.vue";
+
+export default {
+  components: {
+    LikeHeader
+  }
+  
+}
+</script>
+```
+<br>
+
+
+### Vueコンポーネントをローカル登録する
+ローカル登録するコンポーネント  
+```html
+<template>
+  <h1>いいね</h1>
+</template>
+```
+<br>
+
+コンポーネントのローカル登録  
+(App.vue)[./App.vue]で行います。  
+App.vue以外は```LikeHeader```を使用できません。  
+```javascript
+<template>
+  <div>
+    <LikeHeader></LikeHeader>
+    <LikeNumber></LikeNumber>
+  </div>
+</template>
+
+<script>
+import LikeHeader from "./LikeHeader.vue";
+
+export default {
+  components: {
+    LikeHeader
+  }
+}
+</script>
+```
+<br>
+
+
+### templateには必ず1つのrootエレメントしか定義できない
+```html
+<template>
+  <!-- このrootのdivタグがなければエラーになります。 -->
+  <div>
+    <p>いいね({{ number }})</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      number: 5
+    }
+  },
+  methods: {
+    increment() {
+      this.number += 1;
+    }
+  }
+}
+</script>
+```
+<br>
+
+
+### CSSを適用する
+```html
+/* このコンポーネントの divタグのみにCSS適用する場合は、scopedをつけること  */
+<style scoped>
+div {
+  padding: 10px;
+  border: 1px solid red;
+}
+</style>
+```
+<br>

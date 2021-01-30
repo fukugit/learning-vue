@@ -37,3 +37,26 @@ Vue.component('countup', {
 let app2 = new Vue({
   el: '#app2',
 });
+
+/* 
+  特定のVueインスタンスのみでコンポーネントを使用する(ローカルコンポーネント)
+*/
+const component = {
+  data: function() {
+    return {
+      number: 12
+    }
+  },
+  template: '<p>いいね{{number}}<button @click="increment">+1</button></p>',
+  methods: {
+    increment: function() {
+      this.number += 1;
+    }
+  }
+};
+let app3 = new Vue({
+  el: '#app3',
+  components: {
+    'local-countup': component
+  }
+});
