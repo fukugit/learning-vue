@@ -17,6 +17,7 @@
   - [Vueコンポーネントをローカル登録する](#vue%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B)
   - [templateには必ず1つのrootエレメントしか定義できない](#template%E3%81%AB%E3%81%AF%E5%BF%85%E3%81%9A1%E3%81%A4%E3%81%AEroot%E3%82%A8%E3%83%AC%E3%83%A1%E3%83%B3%E3%83%88%E3%81%97%E3%81%8B%E5%AE%9A%E7%BE%A9%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
   - [CSSを適用する](#css%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B)
+  - [親コンポーネントから子コンポーネントに値を渡す(props)](#%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E5%AD%90%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AB%E5%80%A4%E3%82%92%E6%B8%A1%E3%81%99props)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
