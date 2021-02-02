@@ -248,3 +248,32 @@ div {
 </style>
 ```
 <br>
+
+### 親コンポーネントから子コンポーネントに値を渡す(props)
+```html
+<!-- 親コンポーネントは、v-bindeで子コンポーネントに値を渡します  -->
+<LikeNumber :number="number"></LikeNumber>
+```
+<br>
+
+```html
+<template>
+  <div>
+    <p>いいね({{ number/2 }})</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: ["number"],
+  methods: {
+    increment() {
+      this.number += 1;
+    }
+  }
+}
+</script>
+```
+<br>

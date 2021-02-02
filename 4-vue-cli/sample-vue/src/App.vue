@@ -1,7 +1,10 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
+    <p>{{ number }}</p>
+    <!-- 子コンポーネントのpropsに値を渡します。 -->
+    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :number="number"></LikeNumber>
   </div>
 </template>
 
@@ -9,6 +12,11 @@
 import LikeHeader from "./components/LikeHeader.vue";
 
 export default {
+  data() {
+    return {
+      number: 10
+    }
+  },
   components: {
     LikeHeader
   }
