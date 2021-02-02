@@ -12,6 +12,11 @@
   - [Vue-CLIのmain.js](#vue-cli%E3%81%AEmainjs)
   - [renderで単一Vueコンポーネント指定](#render%E3%81%A7%E5%8D%98%E4%B8%80vue%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E6%8C%87%E5%AE%9A)
   - [単一Vueコンポーネント(./App.vue)の構成](#%E5%8D%98%E4%B8%80vue%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88appvue%E3%81%AE%E6%A7%8B%E6%88%90)
+  - [ES6でdataに関数を定義する](#es6%E3%81%A7data%E3%81%AB%E9%96%A2%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B)
+  - [Vueコンポーネントをグローバル登録する](#vue%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%92%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B)
+  - [Vueコンポーネントをローカル登録する](#vue%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B)
+  - [templateには必ず1つのrootエレメントしか定義できない](#template%E3%81%AB%E3%81%AF%E5%BF%85%E3%81%9A1%E3%81%A4%E3%81%AEroot%E3%82%A8%E3%83%AC%E3%83%A1%E3%83%B3%E3%83%88%E3%81%97%E3%81%8B%E5%AE%9A%E7%BE%A9%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
+  - [CSSを適用する](#css%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
