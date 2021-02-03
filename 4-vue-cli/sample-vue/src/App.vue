@@ -3,8 +3,9 @@
     <LikeHeader></LikeHeader>
     <p>{{ number }}</p>
     <!-- 子コンポーネントのpropsに値を渡します。 -->
-    <LikeNumber :number="number"></LikeNumber>
-    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :totalNumber="number"></LikeNumber>
+    <LikeNumber :totalNumber="number"></LikeNumber>
+    <LikeNumber></LikeNumber>
   </div>
 </template>
 

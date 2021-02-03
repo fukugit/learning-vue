@@ -283,3 +283,92 @@ export default {
 </script>
 ```
 <br>
+
+### propsをオブジェクトで受け取る
+```html
+<!-- 親コンポーネントは、v-bindeで子コンポーネントに値を渡します  -->
+<LikeNumber :totalNumber="number"></LikeNumber>
+```
+<br>
+
+```html
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: {
+    totalNumber: Number
+  },
+  methods: {
+    increment() {
+      this.totalNumber += 1;
+    }
+  }
+}
+</script>
+```
+<br>
+
+### propsに型とバリデーションを付ける
+```html
+<!-- 親コンポーネントは、v-bindeで子コンポーネントに値を渡します  -->
+<LikeNumber :totalNumber="number"></LikeNumber>
+```
+<br>
+
+### 
+```html
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: {
+    totalNumber: {
+      type: Number,
+      requierd: true,
+    }
+  },
+  methods: {
+    increment() {
+      this.totalNumber += 1;
+    }
+  }
+}
+</script>
+```
+<br>
+
+### propsにデフォルト値を付ける
+```html
+<!-- 親コンポーネントは、v-bindeで子コンポーネントに値を渡します  -->
+<LikeNumber></LikeNumber>
+```
+<br>
+
+```html
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: {
+    totalNumber: {
+      type: Number,
+      default: 15
+    }
+  },
+  methods: {
+    increment() {
+      this.totalNumber += 1;
+    }
+  }
+}
+</script>
+```
+<br>
+
+### 
+```html
+```
+<br>
+
+### 
+```html
+```
+<br>

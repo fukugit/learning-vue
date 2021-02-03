@@ -1,7 +1,7 @@
 <template>
   <!-- このrootのdivタグがなければエラーになります。 -->
   <div>
-    <p>いいね({{ number/2 }})</p>
+    <p>いいね({{ totalNumber/2 }})</p>
     <button @click="increment">+1</button>
   </div>
 </template>
@@ -9,10 +9,20 @@
 <script>
 export default {
   /* 親コンポーネントから値'number'を受け取ります */
-  props: ["number"],
+  // props: ["number"],
+  // props: {
+  //   totalNumber: Number
+  // },
+  props: {
+    totalNumber: {
+      type: Number,
+      // requierd: true,
+      default: 15
+    }
+  },
   methods: {
     increment() {
-      this.number += 1;
+      this.totalNumber += 1;
     }
   }
 }
