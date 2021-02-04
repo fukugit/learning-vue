@@ -2,9 +2,13 @@
   <div>
     <LikeHeader></LikeHeader>
     <p>{{ number }}</p>
-    <!-- 子コンポーネントのpropsに値を渡します。 -->
-    <LikeNumber :totalNumber="number"></LikeNumber>
-    <LikeNumber :totalNumber="number"></LikeNumber>
+    <!-- 
+      totalNumberで子コンポーネントのpropsに値を渡します。
+      $eventで子コンポーネントからの値を取得します。 
+      number = $event はnumberに対して子コンポーネントの値を挿入しています。
+      -->
+    <LikeNumber :total-number="number" v-on:my-click="number = $event"></LikeNumber>
+    <LikeNumber :total-number="number" v-on:my-click="incrementNum"></LikeNumber>
     <LikeNumber></LikeNumber>
   </div>
 </template>
@@ -20,6 +24,12 @@ export default {
   },
   components: {
     LikeHeader
+  },
+  methods: {
+    /* ここのvalueは $eventの値が入ります。*/
+    incrementNum(value) {
+      this.number = value;
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <!-- このrootのdivタグがなければエラーになります。 -->
   <div>
-    <p>いいね({{ totalNumber/2 }})</p>
+    <p>いいね({{ halfNumber }})</p>
     <button @click="increment">+1</button>
   </div>
 </template>
@@ -17,12 +17,20 @@ export default {
     totalNumber: {
       type: Number,
       // requierd: true,
-      default: 15
+      default: 10
+    }
+  },
+  computed: {
+    halfNumber() {
+      return this.totalNumber / 2;
     }
   },
   methods: {
     increment() {
-      this.totalNumber += 1;
+      // 親コンポーネントに値を渡す場合は $emitを使います。
+      // 第一引数は、値の名称(親コンポーネントで使用するカスタムイベント名です。)
+      // 第二引数は、渡す値です。
+      this.$emit("my-click", this.totalNumber + 1);
     }
   }
 }

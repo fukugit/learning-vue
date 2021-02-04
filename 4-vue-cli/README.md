@@ -363,12 +363,122 @@ export default {
 ```
 <br>
 
-### 
+### 子コンポーネントから親コンポーネントに値を渡す($emit)
+親コンポーネント
 ```html
+<template>
+  <div>
+    <!-- 
+      totalNumberで子コンポーネントのpropsに値を渡します。
+      $eventで子コンポーネントからの値を取得します。 
+      number = $event はnumberに対して子コンポーネントの値を挿入しています。
+      -->
+    <LikeNumber :total-number="number" v-on:my-click="number = $event"></LikeNumber>
+  </div>
+</template>
 ```
 <br>
 
-### 
+子コンポーネント
 ```html
+<template>
+  <div>
+    <p>いいね({{ halfNumber }})</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: {
+    totalNumber: {
+      type: Number,
+      default: 10
+    }
+  },
+  computed: {
+    halfNumber() {
+      return this.totalNumber / 2;
+    }
+  },
+  methods: {
+    increment() {
+      // 親コンポーネントに値を渡す場合は $emitを使います。
+      // 第一引数は、値の名称(親コンポーネントで使用するカスタムイベント名です。)
+      // 第二引数は、渡す値です。
+      this.$emit("my-click", this.totalNumber + 1);
+    }
+  }
+}
+</script>
+```
+<br>
+
+### $emitの値をメソッドで使用する
+親コンポーネント
+```html
+<template>
+  <div>
+    <LikeNumber :total-number="number" v-on:my-click="incrementNum"></LikeNumber>
+  </div>
+</template>
+
+<script>
+import LikeHeader from "./components/LikeHeader.vue";
+
+export default {
+  data() {
+    return {
+      number: 10
+    }
+  },
+  components: {
+    LikeHeader
+  },
+  methods: {
+    /* ここのvalueは $eventの値が入ります。*/
+    incrementNum(value) {
+      this.number = value;
+    }
+  }
+}
+</script>
+```
+<br>
+
+子コンポーネント
+```html
+<template>
+  <div>
+    <p>いいね({{ halfNumber }})</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<script>
+export default {
+  /* 親コンポーネントから値'number'を受け取ります */
+  props: {
+    totalNumber: {
+      type: Number,
+      default: 10
+    }
+  },
+  computed: {
+    halfNumber() {
+      return this.totalNumber / 2;
+    }
+  },
+  methods: {
+    increment() {
+      // 親コンポーネントに値を渡す場合は $emitを使います。
+      // 第一引数は、値の名称(親コンポーネントで使用するカスタムイベント名です。)
+      // 第二引数は、渡す値です。
+      this.$emit("my-click", this.totalNumber + 1);
+    }
+  }
+}
+</script>
 ```
 <br>
