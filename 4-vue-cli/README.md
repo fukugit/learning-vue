@@ -321,7 +321,6 @@ export default {
 ```
 <br>
 
-### 
 ```html
 <script>
 export default {
@@ -488,3 +487,30 @@ export default {
 </script>
 ```
 <br>
+
+### 親から子にHTMLテンプレートを渡す（slot)
+親コンポーネント
+```html
+<template>
+  <div>
+    <!-- LikeHeaderタグ内のTHMLを子コンポーネントに渡します。 -->
+    <LikeHeader>
+      <h1>トータルのいいね数</h1>
+      <h2>{{number}}</h2>
+    </LikeHeader>
+  </div>
+</template>
+```
+<br>
+
+子コンポーネント
+```html
+<template>
+  <div>
+    <!-- LikeHeaderタグ内のTHMLをslotタグで受け取り表示します。 -->
+    <slot></slot>
+  </div>
+</template>
+```
+<br>
+
