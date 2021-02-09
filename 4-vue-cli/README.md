@@ -514,3 +514,28 @@ export default {
 ```
 <br>
 
+### slotにデフォルト値を設定する
+親コンポーネント
+```html
+<template>
+  <div>
+    <!-- LikeHeaderタグ内は空にします。 -->
+    <LikeHeader></LikeHeader>
+  </div>
+</template>
+```
+<br>
+
+子コンポーネント
+```html
+<template>
+  <div>
+    <!-- 
+      親コンポーネントから何も渡されない場合はデフォルト値が表示されます。
+      もし何か渡されればそちらが優先されます。
+     -->
+    <slot><h1>デフォルトの内容</h1></slot>
+  </div>
+</template>
+```
+<br>

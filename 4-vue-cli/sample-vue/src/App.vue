@@ -4,6 +4,7 @@
       <h1>トータルのいいね数</h1>
       <h2>{{number}}</h2>
     </LikeHeader>
+    <LikeHeader></LikeHeader>
     <!-- 
       totalNumberで子コンポーネントのpropsに値を渡します。
       $eventで子コンポーネントからの値を取得します。 
