@@ -25,6 +25,10 @@
   - [$emitの値をメソッドで使用する](#emit%E3%81%AE%E5%80%A4%E3%82%92%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B)
   - [親から子にHTMLテンプレートを渡す（slot)](#%E8%A6%AA%E3%81%8B%E3%82%89%E5%AD%90%E3%81%ABhtml%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E6%B8%A1%E3%81%99slot)
   - [slotにデフォルト値を設定する](#slot%E3%81%AB%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E5%80%A4%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B)
+  - [名前付きslot(v-slot)で複数slotを定義する](#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8Dslotv-slot%E3%81%A7%E8%A4%87%E6%95%B0slot%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B)
+  - [名前付きslot(v-slot)を省略形で記述する](#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8Dslotv-slot%E3%82%92%E7%9C%81%E7%95%A5%E5%BD%A2%E3%81%A7%E8%A8%98%E8%BF%B0%E3%81%99%E3%82%8B)
+  - [](#)
+  - [](#-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
