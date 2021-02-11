@@ -539,3 +539,87 @@ export default {
 </template>
 ```
 <br>
+
+### 名前付きslot(v-slot)で複数slotを定義する
+親コンポーネント
+```html
+<template>
+  <div>
+    <LikeHeader>
+      <!-- 
+        <slot name="title"> に対して値を渡します。
+       -->
+      <template v-slot:title>
+        <h1>トータルのいいね数</h1>
+      </template>
+      <template v-slot:value>
+        <h2>{{number}}</h2>
+      </template>
+    </LikeHeader>
+  </div>
+</template>
+```
+<br>
+
+子コンポーネント
+```html
+<template>
+  <div>
+    <slot name="title"></slot>
+    <slot name="value"></slot>
+  </div>
+</template>
+```
+<br>
+
+### 名前付きslot(v-slot)を省略形で記述する
+親コンポーネント
+```html
+<template>
+  <div>
+    <LikeHeader>
+      <!-- v-slot:は # に置き換え可能です。-->
+      <template #title>
+        <h1>トータルのいいね数</h1>
+      </template>
+      <template v-slot:value>
+        <h2>{{number}}</h2>
+      </template>
+    </LikeHeader>
+  </div>
+</template>
+```
+<br>
+
+子コンポーネント
+```html
+<template>
+  <div>
+    <slot name="title"></slot>
+    <slot name="value"></slot>
+  </div>
+</template>
+```
+<br>
+
+### 
+親コンポーネント
+```html
+```
+<br>
+
+子コンポーネント
+```html
+```
+<br>
+
+### 
+親コンポーネント
+```html
+```
+<br>
+
+子コンポーネント
+```html
+```
+<br>

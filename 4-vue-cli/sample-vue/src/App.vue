@@ -1,10 +1,14 @@
 <template>
   <div>
     <LikeHeader>
-      <h1>トータルのいいね数</h1>
-      <h2>{{number}}</h2>
+      <!-- v-slotは#に置き換え可能です。-->
+      <template #title>
+        <h1>トータルのいいね数</h1>
+      </template>
+      <template v-slot:value>
+        <h2>{{number}}</h2>
+      </template>
     </LikeHeader>
-    <LikeHeader></LikeHeader>
     <!-- 
       totalNumberで子コンポーネントのpropsに値を渡します。
       $eventで子コンポーネントからの値を取得します。 
