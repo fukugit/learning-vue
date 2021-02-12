@@ -1,36 +1,36 @@
 <template>
   <div>
     <LikeHeader>
-      <!-- v-slotは#に置き換え可能です。-->
-      <template #title>
-        <h1>トータルのいいね数</h1>
-      </template>
-      <template v-slot:value>
-        <h2>{{number}}</h2>
-      </template>
+      <h1>トータルのいいね数</h1>
+      <h2>{{number}}</h2>
     </LikeHeader>
-    <!-- 
-      totalNumberで子コンポーネントのpropsに値を渡します。
-      $eventで子コンポーネントからの値を取得します。 
-      number = $event はnumberに対して子コンポーネントの値を挿入しています。
-      -->
-    <LikeNumber :total-number="number" v-on:my-click="number = $event"></LikeNumber>
     <LikeNumber :total-number="number" v-on:my-click="incrementNum"></LikeNumber>
-    <LikeNumber></LikeNumber>
+    <!-- ボタンをクリックすると currentComponentにコンポーネント名をセットするようにします。 -->
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <!-- keep-aliveを入れることでdestroyの対象外とします -->
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
 
 export default {
   data() {
     return {
-      number: 10
+      number: 10,
+      currentComponent: "Home"
     }
   },
   components: {
-    LikeHeader
+    LikeHeader,
+    Home,
+    About
   },
   methods: {
     /* ここのvalueは $eventの値が入ります。*/

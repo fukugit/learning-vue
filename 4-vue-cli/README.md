@@ -603,24 +603,80 @@ export default {
 ```
 <br>
 
-### 
+### 複数コンポーネントを切り替える（動的コンポーネント）
+```html
+<template>
+  <div>
+    <!-- ボタンをクリックすると currentComponentにコンポーネント名をセットするようにします。 -->
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <!-- コンポーネント名の切り替えを動的に行います。 -->
+    <component :is="currentComponent"></component>
+    </keep-alive>
+  </div>
+</template>
+
+<script>
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
+
+export default {
+  data() {
+    return {
+      currentComponent: "Home"
+    }
+  },
+  components: {
+    Home,
+    About
+  }
+}
+</script>
+```
+<br>
+
+### 動的コンポーネントの状態をdestroyさせない
 親コンポーネント
 ```html
+<template>
+  <div>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <!-- 
+      keep-aliveを入れることでdestroyの対象外とします 
+      destroyを防ぐことによってinputに入力した文字が、コンポーネントの切り替え時に保持されるようになります。
+      -->
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
+  </div>
+</template>
+<script>
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
+
+export default {
+  data() {
+    return {
+      currentComponent: "Home"
+    }
+  },
+  components: {
+    Home,
+    About
+  }
+}
+</script>
 ```
 <br>
 
 子コンポーネント
 ```html
-```
-<br>
-
-### 
-親コンポーネント
-```html
-```
-<br>
-
-子コンポーネント
-```html
+<template>
+  <div>
+    <p>ホーム</p>
+    <input type="text">
+  </div>
+</template>
 ```
 <br>
