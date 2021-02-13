@@ -133,7 +133,7 @@ export default {
 <br>
 
 ### Vueコンポーネントをグローバル登録する
-グローバル登録するコンポーネント
+グローバル登録対象となるコンポーネント
 ```html
 <template>
   <p>いいね({{ number }})</p>
@@ -151,8 +151,8 @@ export default {
 ```
 <br>
 
-コンポーネントのグローバル登録  
-(main.js)[./main.js]で行います。
+コンポーネントのグローバル登録方法  
+[main.js](./main.js)で行います。
 ```javascript
 import Vue from 'vue'
 import LikeNumber from './LikeNumber.vue'
@@ -616,7 +616,6 @@ export default {
     <button @click="currentComponent = 'About'">About</button>
     <!-- コンポーネント名の切り替えを動的に行います。 -->
     <component :is="currentComponent"></component>
-    </keep-alive>
   </div>
 </template>
 
@@ -682,5 +681,65 @@ export default {
     <input type="text">
   </div>
 </template>
+```
+<br>
+
+### 動的コンポーネントでkeep-alive使用時にコンポーネント切り替え時に初期処理を行う
+親コンポーネント
+```html
+<template>
+  <div>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
+  </div>
+</template>
+<script>
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
+
+export default {
+  data() {
+    return {
+      currentComponent: "Home"
+    }
+  },
+  components: {
+    Home,
+    About
+  }
+}
+</script>
+```
+<br>
+
+子コンポーネント
+```html
+<script>
+export default {
+  /* 
+    keep-aliveを使用しなかった場合はcomponent切替時にdestroyedされます。
+   */
+  destroyed() {
+    console.log("destroyed");
+  },
+  /* 
+    keep-alive使用時にコンポーネントがアクティブになった時に動きます。
+    ここにアクティブ時の初期処理を書きます。
+   */
+  deactivated() {
+    console.log("deactivated");
+  },
+  /* 
+    keep-alive使用時にコンポーネントが非アクティブになった時に動きます
+    ここに非アクティブ時の初期処理を書きます。
+   */
+  activated() {
+    console.log("activated");
+  }
+}
+</script>
 ```
 <br>

@@ -1,13 +1,5 @@
 # learning-vue
 Vue.jsの学習用プロジェクトです。
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-目次
-
-- [このプロジェクトの構成](#%E3%81%93%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E6%A7%8B%E6%88%90)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
 
 ## このプロジェクトの構成
@@ -44,6 +36,8 @@ Vue.jsの学習用プロジェクトです。
 |                                                | 親＞子 値渡し(prpps)         |
 |                                                | 子＞親 値渡し($emit)         |
 |                                                | 親＞子 HTMLテンプレート渡す（slot) |
+|                                                | 複数(動的)コンポーネントを使用する |
+|                                                | 複数(動的)コンポーネントのkeep-alive |
 | [コンポーネントの基本](./5-vue-component)                | コンポーネントの基本             |
 |                                                | コンポーネントのローカル登録         |
 
