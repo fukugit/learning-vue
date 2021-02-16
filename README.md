@@ -50,5 +50,12 @@ Vue.jsの学習用プロジェクトです。
 |                                                | 複数(動的)コンポーネントを使用する |
 |                                                | 複数(動的)コンポーネントのkeep-alive |
 | [Vue Formの使い方](./6-form)                     | input  |
+|                                                | v-model.lazy |
+|                                                | v-model.number |
+|                                                | v-model.trim |
+|                                                | textarea |
+|                                                | 単体 checkbox |
+|                                                | 複数 checkbox |
+
 
 <br>
