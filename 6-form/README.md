@@ -10,6 +10,17 @@
   - [プロジェクトの実行](#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%AE%9F%E8%A1%8C)
 - [学んだこと](#%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8)
   - [inputを作成する](#input%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B)
+  - [v-model.lazy（即時反映を辞める）](#v-modellazy%E5%8D%B3%E6%99%82%E5%8F%8D%E6%98%A0%E3%82%92%E8%BE%9E%E3%82%81%E3%82%8B)
+  - [v-model.number(入力値を常にNumber型にする)](#v-modelnumber%E5%85%A5%E5%8A%9B%E5%80%A4%E3%82%92%E5%B8%B8%E3%81%ABnumber%E5%9E%8B%E3%81%AB%E3%81%99%E3%82%8B)
+  - [v-model.trimで前後の空白を削除する](#v-modeltrim%E3%81%A7%E5%89%8D%E5%BE%8C%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%92%E5%89%8A%E9%99%A4%E3%81%99%E3%82%8B)
+  - [textarea](#textarea)
+  - [単体 checkbox](#%E5%8D%98%E4%BD%93-checkbox)
+  - [複数 checkbox](#%E8%A4%87%E6%95%B0-checkbox)
+  - [](#)
+  - [](#-1)
+  - [](#-2)
+  - [](#-3)
+  - [](#-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <br>
