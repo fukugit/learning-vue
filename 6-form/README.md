@@ -215,20 +215,95 @@ export default {
 ```
 <br>
 
-
-### 
+### radioボタン
 ```html
+<template>
+  <div>
+    <!-- radioボタン -->
+    <label for="free">無料</label>
+    <input type="radio" id="free" value="無料" v-model="eventData.price">
+    <label for="paid">有料</label>
+    <input type="radio" id="paid" value="有料" v-model="eventData.price">
+    <p>{{eventData.price}}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      eventData: {
+        price: ''
+      }
+    }
+  }
+}
+</script>
 ```
 <br>
 
-### 
+
+### select box(１つのみ選択可)
 ```html
+
+<template>
+  <div>
+    <!-- select box -->
+    <select v-model="eventData.location">
+      <option 
+        v-for="location in locations"
+        :key="location">
+        {{location}}
+      </option>
+    </select>
+    <p>{{eventData.location}}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      locations: ['東京', '大阪'],
+      eventData: {
+        location: ''
+      }
+    }
+  }
+}
+</script>
 ```
 <br>
 
 
-### 
+### select box(複数選択可)
 ```html
+<template>
+  <div>
+    <!-- multiple を付けることで複数選択可能になります。 -->
+    <select v-model="eventData.location" multiple>
+      <option 
+        v-for="location in locations"
+        :key="location">
+        {{location}}
+      </option>
+    </select>
+    <p>{{eventData.location}}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      locations: ['東京', '大阪'],
+      eventData: {
+        location: ''
+      }
+    }
+  }
+}
+</script>
 ```
 <br>
 
