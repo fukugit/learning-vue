@@ -494,6 +494,64 @@ export default {
 ```
 <br>
 
+
+### $emitの値を複数渡す
+親コンポーネント
+```html
+<template>
+  <div>
+    <LikeNumber :total-number="number" v-on:title="getTitle"></LikeNumber>
+    <p>{{title}}</p>
+    <p>{{explanation}}</p>
+  </div>
+</template>
+
+<script>
+import LikeHeader from "./components/LikeHeader.vue";
+
+export default {
+  data() {
+    return {
+      title: 'タイトルがありません',
+      explanation: '説明がありません'
+    }
+  },
+  components: {
+    LikeHeader
+  },
+  methods: {
+    /* ...でなければ取得できません。*/
+    getTitle(...value) {
+      const [title, explanation] = value;
+      this.title = title;
+      this.explanation = explanation;
+    }
+  }
+}
+</script>
+```
+<br>
+
+子コンポーネント
+```html
+<script>
+export default {
+  data() {
+    return {
+      title: 'this is title',
+      explanation: 'this is explanation'
+    }
+  },
+  activated() {
+    this.$emit("title", this.title, this.explanation);
+  }
+}
+</script>
+```
+<br>
+
+
+
 ### 親から子にHTMLテンプレートを渡す（slot)
 親コンポーネント
 ```html

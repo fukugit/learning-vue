@@ -144,6 +144,7 @@ let app10 = new Vue({
   el: '#app10',
   data: {
     message: 'こんにちわ',
+    message2: 'こんばんわ',
   }
 });
 

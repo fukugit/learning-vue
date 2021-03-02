@@ -109,6 +109,9 @@
     <h2>双方向バインディング v-model</h2>
     <input type="text" v-model="message">
     <p>{{ message }}</p>
+
+    <input type="text" :value="message2" @input="message2 = $event.target.value">
+    <p>{{ message2 }}</p>
   </div>
   <hr>
 

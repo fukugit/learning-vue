@@ -365,6 +365,26 @@ let app10 = new Vue({
 ```
 <br>
 
+```javascript
+// v-modelとは、元々は以下の複雑な構文を簡単に記述できるようにしたタグです。
+let app10 = new Vue({
+  el: '#app10',
+  data: {
+    message: 'こんにちわ',
+  }
+});
+```
+```html
+  <div id="app10">
+    <h2>双方向バインディング v-model</h2>
+
+    <input type="text" :value="message" @input="message = $event.target.value">
+    <p>{{ message2 }}</p>
+  </div>
+```
+<br>
+
+
 ### computedプロパティ
 watchプロパティもあるけど、基本的にはcomputedを使います。  
 両者の違いは、watchは非同期処理。conputedは同期。  
