@@ -319,13 +319,57 @@ export default {
 <br>
 
 
-### 
+### コンポーネントでv-modelを使う(Formをコンポーネント化する)
+
+親コンポーネント
 ```html
+<template>
+  <div>
+    <!-- 子コンポーネントのinputを表示して、入力値は親が持てるようにします。 -->
+    <EventTitle v-model="eventData.title"></EventTitle>
+    <p>{{eventData.title}}</p>
+  </div>
+</template>
+
+<script>
+import EventTitle from "./components/EventTitle.vue";
+
+export default {
+  data() {
+    return {
+      eventData: {
+        title: "",
+      }
+    }
+  },
+  components: {
+    EventTitle
+  }
+}
+</script>
 ```
 <br>
 
-
-### 
+子コンポーネント
 ```html
+<template>
+  <div>
+    <label for="title">タイトル</label>
+    <!-- 親から受け取ったvalueをemitを使って親に返します。 -->
+    <input
+      id="title"
+      type="text"
+      :value="value"
+      @input="$emit('input', $event.target.value)" 
+    >
+    <pre>{{ value }}</pre>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ["value"]
+};
+</script>
 ```
 <br>

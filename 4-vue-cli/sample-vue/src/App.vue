@@ -12,6 +12,11 @@
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
+
+    <hr>
+    <!-- 子コンポーネントのinputを表示して、入力値は親が持てるようにします。 -->
+    <EventTitle v-model="eventData.title"></EventTitle>
+    <p>{{eventData.title}}</p>
   </div>
 </template>
 
@@ -19,18 +24,23 @@
 import LikeHeader from "./components/LikeHeader.vue";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
+import EventTitle from "./components/EventTitle.vue";
 
 export default {
   data() {
     return {
       number: 10,
-      currentComponent: "Home"
+      currentComponent: "Home",
+      eventData: {
+        title: "",
+      }
     }
   },
   components: {
     LikeHeader,
     Home,
-    About
+    About,
+    EventTitle
   },
   methods: {
     /* ここのvalueは $eventの値が入ります。*/
